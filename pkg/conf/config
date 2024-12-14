@@ -1,0 +1,53 @@
+{
+  "target_rules": [
+    {
+      "type": "group",
+      "logic": "or",
+      "rules": [
+        {
+          "type": "group",
+          "logic": "and",
+          "rules": [
+            {
+              "type": "operator",
+              "operator": "video_new_user",
+              "params": {"days": 7}
+            },
+            {
+              "type": "operator",
+              "operator": "video_active_user",
+              "params": {"min_active": 3}
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "logic": "and",
+          "rules": [
+            {
+              "type": "operator",
+              "operator": "video_high_value",
+              "params": {"min_value": 100}
+            },
+            {
+              "type": "group",
+              "logic": "or",
+              "rules": [
+                {
+                  "type": "operator",
+                  "operator": "video_frequent_user",
+                  "params": {"min_freq": 5}
+                },
+                {
+                  "type": "operator",
+                  "operator": "video_share_user",
+                  "params": {"min_shares": 3}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
