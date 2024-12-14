@@ -1,10 +1,10 @@
 package video
 
 import (
-	"github.com/your-project/pkg/executor/rule"
+	"github.com/jike-dev/conductor/pkg/executor/rule"
 
-	"github.com/your-project/pkg/executor"
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/executor"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // VideoExecutor 视频业务执行器

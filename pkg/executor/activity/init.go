@@ -3,9 +3,9 @@ package activity
 import (
 	"context"
 
-	"github.com/your-project/pkg/executor"
-	"github.com/your-project/pkg/executor/activity/video"
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/executor"
+	"github.com/jike-dev/conductor/pkg/executor/activity/video"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // ServiceInitializer 服务初始化器

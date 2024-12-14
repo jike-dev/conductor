@@ -3,7 +3,7 @@ package dmp
 import (
 	"context"
 
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // DmpClient DMP客户端接口

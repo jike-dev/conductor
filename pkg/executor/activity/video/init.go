@@ -1,8 +1,8 @@
 package video
 
 import (
-	"github.com/your-project/pkg/executor/activity/video/opertator"
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/executor/activity/video/opertator"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // InitVideoActivity 初始化视频活动

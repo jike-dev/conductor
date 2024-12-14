@@ -5,8 +5,8 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/your-project/pkg/executor/activity"
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/executor/activity"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 func main() {

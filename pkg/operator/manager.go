@@ -3,7 +3,7 @@ package operator
 import (
 	"sync"
 
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // OperatorManager 算子管理器

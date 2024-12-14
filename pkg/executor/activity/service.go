@@ -3,7 +3,7 @@ package activity
 import (
 	"fmt"
 
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // ActivityService 活动服务

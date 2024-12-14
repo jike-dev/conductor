@@ -3,7 +3,7 @@ package executor
 import (
 	"context"
 
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // Dapter 基础处理接口

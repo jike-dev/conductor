@@ -1,6 +1,6 @@
 package types
 
-import "github.com/your-project/pkg/operator"
+import "github.com/jike-dev/conductor/pkg/operator"
 
 // ActivityManager 活动管理器接口
 type ActivityManager interface {

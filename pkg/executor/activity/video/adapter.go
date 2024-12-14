@@ -1,10 +1,10 @@
 package video
 
 import (
-	"github.com/your-project/pkg/dmp"
-	"github.com/your-project/pkg/executor"
-	"github.com/your-project/pkg/executor/adapter"
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/dmp"
+	"github.com/jike-dev/conductor/pkg/executor"
+	"github.com/jike-dev/conductor/pkg/executor/adapter"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // VideoAdapter 视频业务适配器，实现 executor.Dapter 接口

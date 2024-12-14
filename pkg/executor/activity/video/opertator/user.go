@@ -1,6 +1,6 @@
 package opertator
 
-import "github.com/your-project/pkg/types"
+import "github.com/jike-dev/conductor/pkg/types"
 
 type VideoNewUserOperator struct{}
 

@@ -1,7 +1,7 @@
 package adapter
 
 import (
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // BaseAdapter 基础适配器实现

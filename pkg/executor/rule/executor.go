@@ -1,8 +1,8 @@
 package rule
 
 import (
-	"github.com/your-project/pkg/operator"
-	"github.com/your-project/pkg/types"
+	"github.com/jike-dev/conductor/pkg/operator"
+	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // RuleExecutor 规则执行器
