@@ -11,13 +11,13 @@ import (
 type ActivityManager struct {
 	mu        sync.RWMutex
 	executors map[string]types.ActivityExecutor
-	opManager *operator.OperatorManager
+	opManager types.OperatorManager
 }
 
 func NewActivityManager() *ActivityManager {
 	return &ActivityManager{
 		executors: make(map[string]types.ActivityExecutor),
-		opManager: operator.NewOperatorManager(),
+		opManager: operator.NewManager(),
 	}
 }
 
@@ -37,6 +37,6 @@ func (m *ActivityManager) GetExecutor(activityID string) (types.ActivityExecutor
 }
 
 // GetOperatorManager 获取算子管理器
-func (m *ActivityManager) GetOperatorManager() *operator.OperatorManager {
+func (m *ActivityManager) GetOperatorManager() types.OperatorManager {
 	return m.opManager
 }

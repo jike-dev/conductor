@@ -6,20 +6,20 @@ import (
 	"github.com/jike-dev/conductor/pkg/types"
 )
 
-// OperatorManager 算子管理器
-type OperatorManager struct {
+// Manager 算子管理器实现
+type Manager struct {
 	mu        sync.RWMutex
 	operators map[string]map[string]types.Operator // activityID -> operatorName -> operator
 }
 
-func NewOperatorManager() *OperatorManager {
-	return &OperatorManager{
+func NewManager() *Manager {
+	return &Manager{
 		operators: make(map[string]map[string]types.Operator),
 	}
 }
 
 // RegisterOperator 注册算子
-func (m *OperatorManager) RegisterOperator(activityID string, operator types.Operator) {
+func (m *Manager) RegisterOperator(activityID string, operator types.Operator) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
 	if _, ok := m.operators[activityID]; !ok {
@@ -29,7 +29,7 @@ func (m *OperatorManager) RegisterOperator(activityID string, operator types.Ope
 }
 
 // GetOperator 获取算子
-func (m *OperatorManager) GetOperator(activityID, operatorName string) (types.Operator, bool) {
+func (m *Manager) GetOperator(activityID, operatorName string) (types.Operator, bool) {
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 	if ops, ok := m.operators[activityID]; ok {

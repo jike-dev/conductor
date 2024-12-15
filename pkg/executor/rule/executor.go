@@ -1,16 +1,15 @@
 package rule
 
 import (
-	"github.com/jike-dev/conductor/pkg/operator"
 	"github.com/jike-dev/conductor/pkg/types"
 )
 
 // RuleExecutor 规则执行器
 type RuleExecutor struct {
-	opManager *operator.OperatorManager
+	opManager types.OperatorManager
 }
 
-func NewRuleExecutor(opManager *operator.OperatorManager) *RuleExecutor {
+func NewRuleExecutor(opManager types.OperatorManager) *RuleExecutor {
 	return &RuleExecutor{
 		opManager: opManager,
 	}

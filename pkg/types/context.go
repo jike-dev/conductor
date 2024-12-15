@@ -7,6 +7,7 @@ type BusinessContext interface {
 	context.Context
 	// 配置相关
 	GetActivityConfig(activityID string) (*ActivityConfig, bool)
+	SetActivityConfig(activityID string, cfg *ActivityConfig)
 	WithConfig(cfg *ActivityConfig) BusinessContext // 返回带有新配置的上下文
 	GetConfig() *ActivityConfig                     // 获取当前配置
 	// 业务数据相关
@@ -69,4 +70,8 @@ func (c *businessContext) SetActivityResult(activityID string, result *TaskRewar
 func (c *businessContext) GetActivityConfig(activityID string) (*ActivityConfig, bool) {
 	cfg, ok := c.configs[activityID]
 	return cfg, ok
+}
+
+func (c *businessContext) SetActivityConfig(activityID string, cfg *ActivityConfig) {
+	c.configs[activityID] = cfg
 }

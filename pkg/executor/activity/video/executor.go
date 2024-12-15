@@ -41,7 +41,7 @@ func (e *VideoExecutor) Execute(ctx types.BusinessContext, req *types.ActivityRe
 
 	// 使用绑定关系更新奖励信息
 	if bindRelation != nil {
-		reward.VideoList.IsFirstConnect = bindRelation.IsFirstConnect
+		reward.VideoList.UserType = bindRelation.IsFirstConnect
 	}
 
 	// 创建规则执行器
@@ -55,19 +55,8 @@ func (e *VideoExecutor) Execute(ctx types.BusinessContext, req *types.ActivityRe
 
 	if isTarget {
 		// 处理目标用户逻辑
-		reward.VideoList.IsTargetUser = 1
-		reward.VideoList.UserActLevel = calculateUserActLevel(ctx)
-		reward.VideoList.PopUp = calculatePopUp(ctx)
+		reward.VideoList.UserType = 1
 	}
 
 	return nil
-}
-
-// 业务相关的辅助函数
-func calculateUserActLevel(ctx types.BusinessContext) int {
-	return 0
-}
-
-func calculatePopUp(ctx types.BusinessContext) int {
-	return 0
 }

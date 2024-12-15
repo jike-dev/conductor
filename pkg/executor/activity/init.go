@@ -4,7 +4,8 @@ import (
 	"context"
 
 	"github.com/jike-dev/conductor/pkg/executor"
-	"github.com/jike-dev/conductor/pkg/executor/activity/video"
+	"github.com/jike-dev/conductor/pkg/executor/video"
+	"github.com/jike-dev/conductor/pkg/operator"
 	"github.com/jike-dev/conductor/pkg/types"
 )
 
@@ -12,6 +13,7 @@ import (
 type ServiceInitializer struct {
 	configManager *types.ConfigManager
 	actManager    types.ActivityManager
+	opManager     types.OperatorManager
 }
 
 // NewServiceInitializer 创建服务初始化器
@@ -19,7 +21,17 @@ func NewServiceInitializer() *ServiceInitializer {
 	return &ServiceInitializer{
 		configManager: types.NewConfigManager(nil),
 		actManager:    executor.NewActivityManager(),
+		opManager:     operator.NewManager(),
 	}
+}
+
+// InitializeServices 初始化所有服务
+func (s *ServiceInitializer) InitializeServices(ctx context.Context) error {
+	// 初始化视频模块
+	videoExecutor := video.InitModule(s.opManager)
+	s.actManager.RegisterExecutor("video_001", videoExecutor)
+
+	return nil
 }
 
 // Execute 执行活动
@@ -37,51 +49,18 @@ func (s *ServiceInitializer) Execute(ctx context.Context, req *types.ActivityReq
 
 // prepareContext 准备执行上下文
 func (s *ServiceInitializer) prepareContext(ctx context.Context, activityIDs []string) (types.BusinessContext, error) {
-	// 加载配置
-	cfg, err := s.loadConfig(activityIDs)
-	if err != nil {
-		return nil, err
-	}
-
-	// 创建上下文
 	execCtx := types.NewBusinessContext(ctx)
-	return execCtx.WithConfig(cfg), nil
-}
 
-// loadConfig 加载并验证配置
-func (s *ServiceInitializer) loadConfig(activityIDs []string) (*types.ActivityConfig, error) {
+	// 加载每个活动的配置
 	for _, actID := range activityIDs {
-		cfg, ok := s.configManager.GetCachedConfig(actID)
-		if !ok {
+		cfg, err := s.configManager.GetConfig(ctx, actID)
+		if err != nil {
 			continue
 		}
-
-		actCfg, ok := cfg.(*types.ActivityConfig)
-		if !ok {
-			continue
+		if actCfg, ok := cfg.(*types.ActivityConfig); ok {
+			execCtx.SetActivityConfig(actID, actCfg)
 		}
-
-		if err := s.validateConfig(actCfg); err != nil {
-			return nil, err
-		}
-
-		return actCfg, nil
 	}
-	return nil, nil
-}
 
-// validateConfig 验证配置
-func (s *ServiceInitializer) validateConfig(cfg *types.ActivityConfig) error {
-	// 验证配置有效性
-	// 1. 检查必填字段
-	// 2. 验证配置格式
-	// 3. 检查业务规则
-	return nil
-}
-
-// InitializeServices 初始化所有服务
-func (s *ServiceInitializer) InitializeServices(ctx context.Context) error {
-	// 初始化各个业务模块
-	video.InitVideoActivity(s.actManager)
-	return nil
+	return execCtx, nil
 }

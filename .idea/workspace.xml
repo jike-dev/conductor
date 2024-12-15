@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0534c92b-7d4b-4ea6-be3a-6e0b8cd77f30" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmd/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/context/business_context.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/context/business_context.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/dmp/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/dmp/client.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/executor/activity/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/activity/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/activity/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/activity/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/activity/video/adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/activity/video/adapter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/executor/activity/video/executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/activity/video/executor.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/activity/video/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/activity/video/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/activity/video/opertator/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/activity/video/opertator/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/adapter/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/adapter/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/adapter/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/adapter/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/context/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/context/types.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/executor/manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/manager.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/executor/rule/executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/rule/executor.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/executor/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/executor/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/go.mod" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/operator/manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/operator/manager.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/operator/types.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/types/context.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/types/context.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/types/interfaces.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/types/interfaces.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/types/reward.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/types/reward.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
